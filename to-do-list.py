@@ -10,7 +10,7 @@ def checkInt(entry):
 def printLists():
     # this code needs tidying
     # tabulate?
-    print('IN PROGRESS:)
+    print('IN PROGRESS:')
     for item in inprog_list:
           print(item)
     print('TO DO:')
