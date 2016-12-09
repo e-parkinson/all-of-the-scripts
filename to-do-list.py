@@ -33,4 +33,5 @@ while True:
     
     #add new item to list
     else:
-        
+        todo_list.append(new_item)
+        print('Added {}. To Do list now has {} items.'.format(new_item, len(todo_list)))
