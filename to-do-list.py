@@ -2,7 +2,6 @@
 # 3 lists: To do, In progress, & Completed
 
 def printLists():
-    # print lists
     # this code needs tidying
     # tabulate?
     print('IN PROGRESS:)
@@ -15,7 +14,13 @@ def printLists():
           for item in compl_list:
           print(item)
      print(' ')
+          
 def updateLists():
+    print('Move item from:')
+    print('0 To Do')
+    print('1 In Progress')
+    print('2 Completed')
+    response = input('x cancel move')
     # move items between lists
     # if move makes length of completed items > 5, delete oldest (del compl_list[0])
     
