@@ -25,9 +25,10 @@ def updateLists():
     print('Move item from?')
     lists_list = [('To Do', todo_list), ('In Progress', inprog_list), ('Completed', compl_list)]
     for n in lists_list:
-          print(lists_list.index(n) + ' ' + n[0])
-    response = input('enter any other character to cancel')
-    if not int(response):
+          print(str(lists_list.index(n)) + ' ' + n[0])
+    print('enter any other character to cancel')
+    response = input('> ')
+    if not checkInt(response):
           print('Entry was not number => move item cancelled.')
           print('Returned to create item mode.')
     elif int(response) >= len(lists_list):
