@@ -17,9 +17,9 @@ def printLists():
     for item in todo_list:
         print(item)
     print('RECENTLY COMPLETED:')
-          for item in compl_list:
+    for item in compl_list:
           print(item)
-     print(' ')
+    print(' ')
           
 def updateLists():
     print('Move item from?')
