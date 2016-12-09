@@ -2,7 +2,7 @@
 # 3 lists: To do, In progress, & Completed
 
 def printLists():
-    print('LIST LIST LIST')
+    # print lists
     
 def updateLists():
     # move items between lists
@@ -35,3 +35,6 @@ while True:
     else:
         todo_list.append(new_item)
         print('Added {}. To Do list now has {} items.'.format(new_item, len(todo_list)))
+        
+#print out the lists
+printLists()
