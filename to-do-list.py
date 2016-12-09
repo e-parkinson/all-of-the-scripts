@@ -1,6 +1,12 @@
 # to do list in Python
 # 3 lists: To do, In progress, & Completed
-
+def checkInt(entry):
+    try:
+        int(entry)
+        return True
+    except ValueError:
+        return False
+    
 def printLists():
     # this code needs tidying
     # tabulate?
@@ -16,11 +22,20 @@ def printLists():
      print(' ')
           
 def updateLists():
-    print('Move item from:')
-    print('0 To Do')
-    print('1 In Progress')
-    print('2 Completed')
-    response = input('x cancel move')
+    print('Move item from?')
+    lists_list = [('To Do', todo_list), ('In Progress', inprog_list), ('Completed', compl_list)]
+    for n in lists_list:
+          print(lists_list.index(n) + ' ' + n[0])
+    response = input('enter any other character to cancel')
+    if not int(response):
+          print('Entry was not number => move item cancelled.')
+          print('Returned to create item mode.')
+    elif int(response) >= len(lists_list):
+          print('Number entered not in valid range => move item cancelled')
+    else:
+          #remove this after testing
+          print('CHANGED')
+          
     # move items between lists
     # if move makes length of completed items > 5, delete oldest (del compl_list[0])
     
