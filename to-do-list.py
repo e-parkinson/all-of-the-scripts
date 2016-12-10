@@ -7,27 +7,19 @@ def checkInt(entry):
     except ValueError:
         return False
     
-def printLists():
-    # this code needs tidying
-    # tabulate?
-    print('IN PROGRESS:')
-    for item in inprog_list:
-          print(item)
-    print('TO DO:')
-    for item in todo_list:
-        print(item)
-    print('RECENTLY COMPLETED:')
-    for item in compl_list:
-          print(item)
-    print(' ')
+def printLists(lists_list):
+    for n in  range(0,len(lists_list)):
+        print(lists_list[n][0])
+        for item in lists_list[n][1]:
+            print(item)
     
 def printOptions(x):
     for n in x:
         print(str(x.index(n)) + ' ' + n[0])
 
-def updateLists():
+def updateLists(lists_list):
     print('Move item from?')
-    lists_list = [('To Do', todo_list), ('In Progress', inprog_list), ('Completed', compl_list)]
+    #lists_list = [('-To Do-', todo_list), ('-In Progress-', inprog_list), ('-Completed-', compl_list)]
     printOptions(lists_list)
     print('enter any other character to cancel')
     response1 = input('> ')
@@ -48,6 +40,7 @@ def updateLists():
 todo_list = []
 inprog_list = []
 compl_list = []
+lists_list = [('To Do', todo_list), ('In Progress', inprog_list), ('Recently Completed', compl_list)]
 
 # print out instructions on how to use the app
 helpInfo_str = 'Enter "SHOW" to display lists, "UPDATE" to move an item to another list, "HELP" to show this line and "DONE" when finished'
@@ -61,12 +54,12 @@ while True:
     if new_item == 'DONE':
         break
     elif new_item == 'SHOW':
-        printLists()
+        printLists(lists_list)
 
     elif new_item == 'HELP':
         print(helpInfo_str)
     elif new_item == 'UPDATE':
-        updateLists()
+        updateLists(lists_list)
     
     #add new item to list
     else:
