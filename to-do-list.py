@@ -23,8 +23,8 @@ def printLists():
     
 def printOptions(x):
     for n in x:
-        print(str(x.index(n)) + ' ' + n[0]
-          
+        print(str(x.index(n)) + ' ' + n[0])
+
 def updateLists():
     print('Move item from?')
     lists_list = [('To Do', todo_list), ('In Progress', inprog_list), ('Completed', compl_list)]
@@ -37,10 +37,10 @@ def updateLists():
     elif int(response1) >= len(lists_list):
          print('Number entered not in valid range => move item cancelled')
     else:
-         print('You are moving an item from {}. Move to?'.format(lists_list[response1][0]))
+         print('You are moving an item from {}. Move to?'.format(lists_list[int(response1)][0]))
          printOptions(lists_list)
          response2 = input('> ')
-         print('Moving item from {} to {}. Choose item to move: '.format(lists_list[response1][0], lists_list[response2][0]))
+         print('Moving item from {} to {}. Choose item to move: '.format(lists_list[int(response1)][0], lists_list[int(response2)][0]))
     # move items between lists
     # if move makes length of completed items > 5, delete oldest (del compl_list[0])
     
