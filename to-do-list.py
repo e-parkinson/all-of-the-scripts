@@ -12,6 +12,7 @@ def printLists(lists_list):
         print(lists_list[n][0])
         for item in lists_list[n][1]:
             print(item)
+        print(' ')
     
 def printOptions(x):
     for n in x:
@@ -33,9 +34,29 @@ def updateLists(lists_list):
          printOptions(lists_list)
          response2 = input('> ')
          print('Moving item from {} to {}. Choose item to move: '.format(lists_list[int(response1)][0], lists_list[int(response2)][0]))
-    # move items between lists
-    # if move makes length of completed items > 5, delete oldest (del compl_list[0])
-    
+         for item in lists_list[int(response1)][1]:
+             print(str(lists_list[int(response1)][1].index(item)) + ' ' + item)
+         print('enter digit: ')
+         response3 = input('> ')
+         if not checkInt(response3):
+             print('Entry was not number => move item cancelled.')
+             print('Returned to create item mode.')
+         elif int(response1) >= len(lists_list):
+             print('Number entered not in valid range => move item cancelled')
+         else:
+             # get item to copy
+             working_str = lists_list[int(response1)][1][int(response3)]
+             # copy item to new list
+             lists_list[int(response2)][1].append(working_str)
+             # remove item from original list
+             lists_list[int(response1)][1].pop(int(response3))
+             # if > 5 completed items, delete oldest
+             if len(compl_list) == 5:
+                 compl_list.pop(0)
+             print('Item moved.')
+             print(' ')
+             printLists(lists_list)
+             print('Returned to create mode.')
 # make lists to hold on to items
 todo_list = []
 inprog_list = []
